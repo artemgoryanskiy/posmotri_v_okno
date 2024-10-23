@@ -17,7 +17,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -91,7 +91,6 @@ ol {
   display: flex;
   align-content: start;
   justify-content: space-between;
-
 }
 
 .content__video-card-thumbnail {
@@ -151,26 +150,132 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-} 
+}
 
 .search-form__fieldset {
-  border: none
+  border: none;
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
 }
 
 .search-form__label {
   display: flex;
   width: fit-content;
-}  
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+  vertical-align: middle;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 15px;
+  height: 15px;
+  background-color: white;
+}
+
+ .search-form__label:hover > .search-form__label-text {
+  border-bottom: 1px solid white;
+  cursor: pointer;
+ 
+}
+
+.search-form__pseudo-checkbox:focus, .search-form__pseudo-checkbox:focus-visible {
+  outline: none;
+}
+
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  outline: none;
+  border: 1px solid white;
+  padding: 1px;
+}
 
 .search-form__textfield {
   appearance: none;
   font-family: inherit;
   font-size: 18px;
-  color: rgb(255 255 255 / .7);
+  color: rgb(255 255 255 / 0.7);
   background: transparent;
   border: none;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  padding: 2.5px 14px 2,5px 0;
+  padding: 2.5px 14px 2, 5px 0;
   width: 225px;
+}
+
+.search-form__textfield:active {
+  border: 1px solid white;
+  outline: none;
+}
+.search-form__textfield:focus,
+.search-form__textfield:focus-visible {
+  outline: none;
+}
+
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  outline: none;
+  border: 1px solid white;
+  padding: 1px;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 6px 0;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.button:active {
+  background: rgba(84, 80, 80, 1);
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  display: inline-flex;
+  align-self: flex-end;
+  justify-content: center;
+}
+
+.more-button {
+  width: 100%;
 }
