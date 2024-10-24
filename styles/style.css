@@ -85,6 +85,7 @@ ol {
 .result__video {
   inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -131,6 +132,7 @@ ol {
 .content__video-card-thumbnail {
   inline-size: 194px;
   block-size: 103px;
+  object-fit: cover;
   object-position: center;
 }
 
